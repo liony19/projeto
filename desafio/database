@@ -1,0 +1,44 @@
+CREATE TABLE cliente (
+    id NUMBER PRIMARY KEY,
+    nome VARCHAR2(100),
+    cpf VARCHAR2(11),
+    cnpj VARCHAR2(14),
+    tipo_cliente VARCHAR2(2),
+    telefone VARCHAR2(15),
+    endereco_id NUMBER,
+    CONSTRAINT fk_endereco FOREIGN KEY (endereco_id) REFERENCES endereco(id)
+);
+
+CREATE TABLE endereco (
+    id NUMBER PRIMARY KEY,
+    logradouro VARCHAR2(100),
+    numero VARCHAR2(10),
+    complemento VARCHAR2(50),
+    bairro VARCHAR2(50),
+    cidade VARCHAR2(50),
+    estado VARCHAR2(2),
+    cep VARCHAR2(8)
+);
+
+CREATE TABLE conta (
+    id NUMBER PRIMARY KEY,
+    banco VARCHAR2(50),
+    agencia VARCHAR2(10),
+    numero_conta VARCHAR2(20),
+    cliente_id NUMBER,
+    CONSTRAINT fk_cliente FOREIGN KEY (cliente_id) REFERENCES cliente(id)
+);
+
+CREATE TABLE movimentacao (
+    id NUMBER PRIMARY KEY,
+    tipo_movimentacao VARCHAR2(50),
+    valor NUMBER,
+    data_movimentacao DATE,
+    conta_id NUMBER,
+    CONSTRAINT fk_conta FOREIGN KEY (conta_id) REFERENCES conta(id)
+);
+
+CREATE SEQUENCE seq_cliente START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE seq_endereco START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE seq_conta START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE seq_movimentacao START WITH 1 INCREMENT BY 1;
