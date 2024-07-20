@@ -1,0 +1,5 @@
+com/xpto/app/Main.class
+com/xpto/dao/ContaBancariaDAO.class
+com/xpto/model/Cliente.class
+com/xpto/model/ContaBancaria.class
+com/xpto/dao/ClienteDAO.class
