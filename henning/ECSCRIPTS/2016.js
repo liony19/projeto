@@ -1,0 +1,1 @@
+//2016 tambem influenciou bastante em numeros (math) apresentando exponenciação

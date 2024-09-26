@@ -1,0 +1,4 @@
+//2021 foi um ano que influenciou bastante em promises e separadores numéricos
+//o separador numérico não é permitido no começo ou no fim de um número
+
+//em java script apenas variáveis podem começar com _
